@@ -23,7 +23,7 @@ DShineeTools is a Manifest V3 browser extension scaffold focused on reducing ad 
 1. Open `chrome://extensions`.
 2. Enable `Developer mode`.
 3. Choose `Load unpacked`.
-4. Select `C:\Extension-AdBlock`.
+4. Select `\Extension-AdBlock`.
 
 ## Notes
 
