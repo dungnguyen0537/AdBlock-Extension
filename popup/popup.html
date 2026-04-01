@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DShineeTools</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section class="hero-card">
+        <div class="brand-row">
+          <img class="brand-mark" src="../assets/logo.svg" alt="DShineeTools" />
+          <div>
+            <p class="eyebrow">Hybrid Defense</p>
+            <h1>DShineeTools</h1>
+            <p class="subtitle">YouTube + Spotify Ad Control</p>
+          </div>
+        </div>
+        <div class="hero-grid">
+          <article class="metric">
+            <span class="metric-label">Total blocked</span>
+            <strong id="totalBlocked">0</strong>
+          </article>
+          <article class="metric">
+            <span class="metric-label">YouTube</span>
+            <strong id="youtubeBlocked">0</strong>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Spotify</span>
+            <strong id="spotifyBlocked">0</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Core toggles</h2>
+          <p>Trạng thái chính của hệ thống</p>
+        </div>
+        <label class="toggle-row">
+          <div>
+            <strong>YouTube shield</strong>
+            <span>Skip ads + clean sponsored UI</span>
+          </div>
+          <input id="youtubeEnabled" type="checkbox" />
+        </label>
+        <label class="toggle-row">
+          <div>
+            <strong>Spotify shield</strong>
+            <span>Mute/advance ad playback trên web player</span>
+          </div>
+          <input id="spotifyEnabled" type="checkbox" />
+        </label>
+        <label class="toggle-row">
+          <div>
+            <strong>Aggressive mode</strong>
+            <span>Tăng lực chặn cho YouTube pre-roll & overlay</span>
+          </div>
+          <input id="aggressiveMode" type="checkbox" />
+        </label>
+        <label class="toggle-row">
+          <div>
+            <strong>Auto mute Spotify ads</strong>
+            <span>Giữ trải nghiệm nghe không bị gắt</span>
+          </div>
+          <input id="spotifyMuteAds" type="checkbox" />
+        </label>
+      </section>
+
+      <section class="panel compact">
+        <div class="panel-head">
+          <h2>Status</h2>
+          <p id="statusLine">Engine ready</p>
+        </div>
+        <div class="pill-row">
+          <span class="pill">MV3</span>
+          <span class="pill">Bilingual UI</span>
+          <span class="pill">DNR + DOM patch</span>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="openOptions" class="primary">Open Settings</button>
+        <button id="resetStats" class="secondary">Reset Counter</button>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

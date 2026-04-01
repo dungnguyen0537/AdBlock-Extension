@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DShineeTools Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="masthead">
+        <div class="title-wrap">
+          <img class="logo" src="../assets/logo.svg" alt="DShineeTools" />
+          <div>
+            <p class="eyebrow">Detailed System Blueprint</p>
+            <h1>DShineeTools Settings</h1>
+            <p class="lead">
+              Một bảng điều khiển mạnh mẽ để tinh chỉnh YouTube và Spotify defense layers.
+            </p>
+          </div>
+        </div>
+        <div class="summary-card">
+          <span class="summary-label">Blocked so far</span>
+          <strong id="summaryTotal">0</strong>
+          <p id="summaryStatus">Engine online</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>YouTube Engine</h2>
+          <label class="field switch">
+            <span>Main protection</span>
+            <input id="youtubeEnabled" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Auto skip video ads</span>
+            <input id="autoSkipVideoAds" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Aggressive mode</span>
+            <input id="aggressiveMode" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Hide promoted modules</span>
+            <input id="hidePromotions" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Shorts ad cleanup</span>
+            <input id="blockShortsAds" type="checkbox" />
+          </label>
+        </article>
+
+        <article class="card">
+          <h2>Spotify Engine</h2>
+          <label class="field switch">
+            <span>Main protection</span>
+            <input id="spotifyEnabled" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Mute audio ads</span>
+            <input id="muteAudioAds" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Auto advance playback</span>
+            <input id="autoAdvance" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Hide sponsored recommendations</span>
+            <input id="hideSponsoredRecommendations" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Preserve original volume</span>
+            <input id="preserveVolume" type="checkbox" />
+          </label>
+        </article>
+
+        <article class="card">
+          <h2>Experience</h2>
+          <label class="field">
+            <span>Interface language style</span>
+            <select id="languageMix">
+              <option value="mixed">Việt + English</option>
+              <option value="vi">Tiếng Việt ưu tiên</option>
+              <option value="en">English priority</option>
+            </select>
+          </label>
+          <label class="field switch">
+            <span>Compact popup mode</span>
+            <input id="compactMode" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Show badge counter</span>
+            <input id="showBadge" type="checkbox" />
+          </label>
+          <label class="field">
+            <span>Allowlist domains</span>
+            <textarea
+              id="allowedDomains"
+              rows="7"
+              placeholder="example.com&#10;subdomain.example.com"
+            ></textarea>
+          </label>
+        </article>
+
+        <article class="card">
+          <h2>Filter Bundles</h2>
+          <label class="field switch">
+            <span>Adaptive network filters</span>
+            <input id="enableAdaptiveNetworkFilters" type="checkbox" />
+          </label>
+          <label class="field switch">
+            <span>Cosmetic selector filters</span>
+            <input id="enableCosmeticFilters" type="checkbox" />
+          </label>
+          <label class="field">
+            <span>YouTube network filters</span>
+            <textarea
+              id="youtubeNetworkFilters"
+              rows="6"
+              placeholder="||doubleclick.net^&#10;|https://www.youtube.com/pagead/&#10;regex:^https://example\\.com/ad/.*"
+            ></textarea>
+          </label>
+          <label class="field">
+            <span>Spotify network filters</span>
+            <textarea
+              id="spotifyNetworkFilters"
+              rows="6"
+              placeholder="regex:^https://spclient\\.wg\\.spotify\\.com/ads/.*"
+            ></textarea>
+          </label>
+          <label class="field">
+            <span>YouTube cosmetic selectors</span>
+            <textarea
+              id="youtubeCosmeticFilters"
+              rows="5"
+              placeholder="ytd-rich-section-renderer:has([aria-label*='Sponsored'])"
+            ></textarea>
+          </label>
+          <label class="field">
+            <span>Spotify cosmetic selectors</span>
+            <textarea
+              id="spotifyCosmeticFilters"
+              rows="5"
+              placeholder="[data-testid='ad-badge']"
+            ></textarea>
+          </label>
+        </article>
+
+        <article class="card">
+          <h2>Architecture Notes</h2>
+          <ul class="notes">
+            <li>Layer 1: DNR rules chặn request quảng cáo ở network edge.</li>
+            <li>Layer 2: injected fetch/XHR patch để làm sạch payload và ad endpoints.</li>
+            <li>Layer 3: content scripts quan sát DOM/player để skip, mute và ẩn phần tử tài trợ.</li>
+            <li>Layer 4: filter bundles bổ sung custom network + cosmetic rules theo cú pháp đơn giản.</li>
+            <li>Layer 5: popup/options cung cấp control center và telemetry counter.</li>
+          </ul>
+          <div class="button-row">
+            <button id="saveButton" class="primary">Save Configuration</button>
+            <button id="resetButton" class="secondary">Reset Stats</button>
+          </div>
+          <p id="statusLine" class="status">Waiting for changes...</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
