@@ -1,0 +1,37 @@
+:root {
+  --streamshield-accent: #21c7a8;
+  --streamshield-danger: #ff6b6b;
+  --streamshield-surface: rgba(10, 20, 27, 0.84);
+  --streamshield-border: rgba(255, 255, 255, 0.12);
+}
+
+[data-streamshield-hidden="true"] {
+  display: none !important;
+}
+
+[data-streamshield-youtube="on"] ytd-display-ad-renderer,
+[data-streamshield-youtube="on"] ytd-ad-slot-renderer,
+[data-streamshield-youtube="on"] ytd-in-feed-ad-layout-renderer,
+[data-streamshield-youtube="on"] ytd-promoted-sparkles-web-renderer,
+[data-streamshield-youtube="on"] ytd-banner-promo-renderer,
+[data-streamshield-youtube="on"] #masthead-ad,
+[data-streamshield-youtube="on"] #player-ads,
+[data-streamshield-youtube="on"] .video-ads,
+[data-streamshield-youtube="on"] .ytp-ad-module,
+[data-streamshield-youtube="on"] .ytp-ad-overlay-container,
+[data-streamshield-youtube="on"] .ytd-ad-slot-renderer,
+[data-streamshield-youtube="on"] .ytd-promoted-video-renderer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+[data-streamshield-spotify="on"] [data-testid="ad-badge"],
+[data-streamshield-spotify="on"] [aria-label*="Sponsored"],
+[data-streamshield-spotify="on"] [aria-label*="sponsored"],
+[data-streamshield-spotify="on"] [aria-label*="Advertisement"],
+[data-streamshield-spotify="on"] [aria-label*="advertisement"],
+[data-streamshield-spotify="on"] [aria-label*="Quảng cáo"],
+[data-streamshield-spotify="on"] [aria-label*="Được tài trợ"] {
+  display: none !important;
+}

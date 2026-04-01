@@ -1,0 +1,256 @@
+:root {
+  color-scheme: dark;
+  --bg: linear-gradient(180deg, #08131d 0%, #04080d 100%);
+  --surface: rgba(8, 20, 27, 0.92);
+  --border: rgba(118, 198, 255, 0.15);
+  --text: #eef8ff;
+  --muted: #8ba2b3;
+  --accent: #61d8ff;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Bahnschrift, "Segoe UI", "Trebuchet MS", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.page-header {
+  margin-bottom: 16px;
+}
+
+.title-wrap,
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.title-wrap {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.lead {
+  margin-top: 6px;
+  color: var(--muted);
+  max-width: 44ch;
+}
+
+.section {
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: end;
+}
+
+.section-head p,
+.toggle-row span,
+.status-line {
+  color: var(--muted);
+}
+
+.option-list,
+.filter-list,
+.filter-group {
+  display: grid;
+  gap: 10px;
+}
+
+.filter-group {
+  gap: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.filter-summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.filter-summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter-summary-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.filter-summary-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text);
+}
+
+.filter-summary-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter-summary-icon {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+}
+
+.filter-group[open] .filter-summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.filter-group[open] .filter-summary-icon {
+  transform: rotate(225deg);
+}
+
+.filter-group-body {
+  display: grid;
+  padding: 0 16px 4px;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toggle-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.toggle-row div {
+  display: grid;
+  gap: 4px;
+}
+
+.filter-group-body .toggle-row:first-child {
+  padding-top: 14px;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.dns-card {
+  display: grid;
+  gap: 14px;
+}
+
+.dns-endpoint-wrap {
+  display: grid;
+  gap: 6px;
+}
+
+.dns-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.dns-endpoint {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-family: Consolas, "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
+
+.dns-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-button {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-button {
+  border-color: rgba(97, 216, 255, 0.28);
+  background: rgba(97, 216, 255, 0.12);
+}
+
+.dns-steps {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+}
+
+.status-line {
+  margin: 6px 2px 0;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 18px;
+  }
+
+  .section-head {
+    display: grid;
+  }
+}

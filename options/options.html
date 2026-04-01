@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DShineeTools Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <div class="title-wrap">
+          <img class="logo" src="../assets/icons/icon-48.png" alt="DShineeTools" />
+          <div>
+            <h1>DShineeTools Settings</h1>
+            <p class="lead">Made by DShineeDev | Version 1.0.0</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Nền tảng</h2>
+        <div class="option-list">
+          <label class="toggle-row">
+            <div>
+              <strong>Bật chặn quảng cáo YouTube</strong>
+              <span>Áp dụng các lớp chặn cho YouTube.</span>
+            </div>
+            <input id="youtubeEnabled" type="checkbox" />
+          </label>
+          <label class="toggle-row">
+            <div>
+              <strong>Bật chặn quảng cáo Spotify</strong>
+              <span>Áp dụng các lớp chặn cho Spotify Web Player.</span>
+            </div>
+            <input id="spotifyEnabled" type="checkbox" />
+          </label>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Bộ lọc có sẵn</h2>
+          <p>Tự lưu khi thay đổi</p>
+        </div>
+        <div id="filterList" class="filter-list"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>DNS Setup</h2>
+          <p>Cấu hình Secure DNS thủ công trong Chrome</p>
+        </div>
+        <div class="dns-card">
+          <div class="dns-endpoint-wrap">
+            <span class="dns-label">DNS Endpoint</span>
+            <code id="dnsEndpoint" class="dns-endpoint"></code>
+          </div>
+          <div class="dns-actions">
+            <button id="copyDnsEndpoint" class="action-button primary-button" type="button">
+              Copy DNS
+            </button>
+            <button id="openChromeSecurity" class="action-button" type="button">
+              Mở Chrome Security
+            </button>
+          </div>
+          <ol id="dnsSteps" class="dns-steps"></ol>
+        </div>
+      </section>
+
+      <p id="statusLine" class="status-line">Đang tải cấu hình...</p>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

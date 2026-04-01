@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DShineeTools</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="popup-header">
+        <div class="brand-row">
+          <img class="brand-mark" src="../assets/icons/icon-48.png" alt="DShineeTools" />
+          <div>
+            <h1>DShineeTools</h1>
+            <p class="subtitle">AdBlocker By DShineeDev</p>
+          </div>
+        </div>
+        <button id="openOptions" class="ghost">Settings</button>
+      </header>
+
+      <section class="summary-card">
+        <span class="metric-label">Total Request</span>
+        <strong id="totalRequests">0</strong>
+        <p class="summary-caption"></p>
+      </section>
+
+      <section class="metrics-grid">
+        <article class="metric-card">
+          <span class="metric-label">YouTube</span>
+          <strong id="youtubeRequests">0</strong>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">Spotify</span>
+          <strong id="spotifyRequests">0</strong>
+        </article>
+        <article class="metric-card wide">
+          <span class="metric-label">Website</span>
+          <strong id="websiteRequests">0</strong>
+        </article>
+      </section>
+
+      <p id="statusLine" class="status-line">Đang hoạt động</p>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
